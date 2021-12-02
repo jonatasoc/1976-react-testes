@@ -12,4 +12,12 @@ describe("App", () => {
 
     expect(bankText).toBeInTheDocument();
   });
+
+  it("should show the account balance when the app is opened", () => {
+    render(<App />);
+
+    const balanceText = screen.getByText(/r\$ 1000/i);
+
+    expect(balanceText).toBeInTheDocument();
+  });
 });
